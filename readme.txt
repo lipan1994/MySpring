@@ -1,0 +1,14 @@
+###实现springmvc基本流程
+需要依赖servlet的jar包，因为springmv是基于servlet的封装
+
+
+目前不考虑dao层，只考虑controller能调到service，service简单定义点打印逻辑就好。
+
+配置web.xml中的web入口为自定义的MydispatcherServlet，指定ioc的上下文配置。
+configurationLocation这个配置在传统项目中，一把是指定义一个 配置文件的总入口，然后dao、service、web是分开配置
+其目的也是为了在web项目启动的时候 根据配置文件去初始化ioc容器，因为目前主流项目根本不会有xml这种配置，所以为了简单
+我直接使用application.properties去指定需要扫描的包了。
+
+
+定义常见注解,如果有注解的类会进行扫包操作
+
